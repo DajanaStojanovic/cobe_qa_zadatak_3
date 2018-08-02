@@ -1,6 +1,5 @@
-# QA zadatak
-# 3. zadatak
-# Dajana Stojanović, dajana.stojanovic994@gmail.com
+# QA zadatak, 3. zadatak
+### Dajana Stojanović, dajana.stojanovic994@gmail.com
 
 
 
