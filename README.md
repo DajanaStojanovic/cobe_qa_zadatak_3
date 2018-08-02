@@ -1,4 +1,4 @@
-<h1 style="text-align: center">QA zadatak</h1>
+# QA zadatak
 # 3. zadatak
 # Dajana Stojanović, dajana.stojanovic994@gmail.com
 
