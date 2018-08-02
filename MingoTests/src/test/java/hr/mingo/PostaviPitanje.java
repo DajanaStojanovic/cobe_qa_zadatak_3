@@ -2,7 +2,6 @@ package hr.mingo;
 
 import org.junit.AfterClass;
 import org.junit.Test;
-//import org.junit.AfterClass;
 
 public class PostaviPitanje {
 	
@@ -15,7 +14,6 @@ public class PostaviPitanje {
 			
 	@AfterClass
 	public static void cleanUP() {
-	//	Browser.driver.close();
+		Browser.driver.close();
 	}
 }
-
