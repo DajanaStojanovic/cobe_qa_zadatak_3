@@ -6,19 +6,11 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import hr.mingo.Browser;
-
-//import org.openqa.selenium.By;
-//import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-//import org.openqa.selenium.support.ui.WebDriverWait;
-
 import hr.mingo.variables.GlobalVariables;
 
-
 public class PosPitanje extends GlobalVariables{
-	
 	//Open page
 	public void goTo() {
 		Browser.goTo(url);
@@ -28,20 +20,20 @@ public class PosPitanje extends GlobalVariables{
 	public void inputFields() {
 		JavascriptExecutor js = (JavascriptExecutor) Browser.driver;
 		
-	    //Find element by id 'Zapitanjce'      		
-        WebElement element = Browser.driver.findElement(By.id("Zapitanjce"));
+	   	//Find element by id 'Zapitanjce'      		
+        	WebElement element = Browser.driver.findElement(By.id("Zapitanjce"));
 
-        //Scroll till element vidible		
-        js.executeScript("arguments[0].scrollIntoView();", element);
-        
-        //Click on element with id 'Zapitanjce'
+		//Scroll till element vidible		
+		js.executeScript("arguments[0].scrollIntoView();", element);
+
+        	//Click on element with id 'Zapitanjce'
 		Browser.driver.findElement(By.id("Zapitanjce")).click();
 		
 		//Wait for form to be visible
 		WebDriverWait wait = new WebDriverWait(Browser.driver, wait10);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("pitanjce")));
 		
-		//Select value from dropdown 'U koju domenu pripada vaše pitanje' but don't select 
+		//Select value from dropdown 'U koju domenu pripada vaÅ¡e pitanje' but don't select 
 		//first element because first element is selected by default
 		if(getDomPitanja() != 1) {
 			Select vasPit = new Select(Browser.driver.findElement(By.id("e1")));
@@ -59,7 +51,7 @@ public class PosPitanje extends GlobalVariables{
 			System.out.println(tipporukeid);
 			Browser.driver.findElement(By.xpath(tipporukeid)).click();
 		}	
-		//Click on off for 'Želim da me kontaktira netko iz ministarstva u vezi mog upita'
+		//Click on off for 'Å½elim da me kontaktira netko iz ministarstva u vezi mog upita'
 		Browser.driver.findElement(By.xpath("//*[@id=\"demo1\"]/div/a")).click();
 		
 		//Write message
@@ -82,12 +74,12 @@ public class PosPitanje extends GlobalVariables{
 		//Input in field 'Ime i prezime'
 		Browser.driver.findElement(By.id("imePrezime")).clear();
 		
-		//Click on 'Pošalji'
+		//Click on 'PoÅ¡alji'
 		Browser.driver.findElement(By.xpath("//*[@id=\"salji\"]/button")).click();
 		
 		//Verify if error message is visible and equal to expected text
 		WebElement msgIme=Browser.driver.findElement(By.id("error"));
-        String textIme=msgIme.getText();
+        	String textIme=msgIme.getText();
 		String expectedTextIme = "Ime je obavezan parametar";
 		Assert.assertEquals(textIme,expectedTextIme);
 		
@@ -97,12 +89,12 @@ public class PosPitanje extends GlobalVariables{
 		//Input in field 'Kontakt telefon'
 		Browser.driver.findElement(By.id("kontakt")).clear();
 		
-		//Click on 'Pošalji'
+		//Click on 'PoÅ¡alji'
 		Browser.driver.findElement(By.xpath("//*[@id=\"salji\"]/button")).click();
 		
 		//Verify if error message is visible and equal to expected text
 		WebElement msgKon=Browser.driver.findElement(By.id("error"));
-        String textKon=msgKon.getText();
+        	String textKon=msgKon.getText();
 		String expectedTextKon = "Kontakt je obavezan parametar";
 		Assert.assertEquals(textKon,expectedTextKon);
 		
@@ -114,20 +106,19 @@ public class PosPitanje extends GlobalVariables{
 		
 		//Verify if error message is visible and equal to expected text
 		WebElement msgMail=Browser.driver.findElement(By.id("error"));
-        String textMail=msgMail.getText();
-		String expectedTextMail = "Pogrešno upisan e-mail !";
+        	String textMail=msgMail.getText();
+		String expectedTextMail = "PogreÅ¡no upisan e-mail !";
 		Assert.assertEquals(textMail,expectedTextMail);
 		
-		//Click on 'Pošalji'
+		//Click on 'PoÅ¡alji'
 		Browser.driver.findElement(By.xpath("//*[@id=\"salji\"]/button")).click();
 		
 		//Input in field 'Kontakt email' again
 		Browser.driver.findElement(By.id("email")).sendKeys(getEmail());
-
 	}
 
 	public void send() { 
-		//Click on 'Pošalji'
+		//Click on 'PoÅ¡alji'
 		Browser.driver.findElement(By.xpath("//*[@id=\"salji\"]/button")).click();
 	}
 }
